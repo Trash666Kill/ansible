@@ -1,9 +1,9 @@
-- name: install python3
-  hosts: "*"
+---
+- hosts: VMs
+  remote_user: emperor
   tasks:
-    - name: install python3
-      apt:
-        name: python3
-        state: present
-        update_cache: true
-      become: true
+    - name: "instalando nload e htop"
+      apt: name= {{ item }} state=present
+      with_items:
+        - nload
+        - htop
