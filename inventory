@@ -1,0 +1,14 @@
+[Servers]
+Alcatraz ansible_port=24
+Hammer ansible_port=25
+Mediator ansible_port=26
+Raptor ansible_port=27
+#
+[VMs]
+Sun
+Saturn
+Star
+Mars
+Neptune
+Venus
+Uranus ansible_port=32
