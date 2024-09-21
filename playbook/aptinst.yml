@@ -1,9 +1,11 @@
 ---
-- hosts: VMs
+- hosts: Virtual
   remote_user: emperor
+  become: yes  # Add this line to use sudo
   tasks:
-    - name: "instalando nload e htop"
-      apt: name= {{ item }} state=present
+    - name: "instalando zabbix-agent"
+      apt:
+        name: "{{ item }}"
+        state: present
       with_items:
-        - nload
-        - htop
+        - zabbix-agent
